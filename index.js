@@ -18,12 +18,12 @@ app.use(cors());
 app.use(cookiesParser())
 // Middleware for Errors
 app.use(errorMiddleware);
-app.use(express.static(path.join(__dirname, "./static")));
+
 //=======routes==============================
 app.use('/api',routes)
-app.get("/upload", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./static/index.html"));
-  });
+app.get("/", (req, res) => {
+    res.send("I am Semma Backend")
+});
   
 
 //========Listen App ===================================
